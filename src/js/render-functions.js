@@ -3,6 +3,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryEl = document.querySelector('.gallery');
 const loaderEl = document.querySelector('.loader');
+const loadMoreBtn = document.querySelector('.load-more');
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
@@ -12,7 +13,7 @@ export function createGallery(images) {
   const markup = images.map(image => `
     <li class="gallery-item">
       <a href="${image.largeImageURL}">
-        <img src="${image.webformatURL}" alt="${image.tags} width="360"" />
+        <img src="${image.webformatURL}" alt="${image.tags}" width="360"/>
       </a>
       <div class="info">
         <p class="text-descr">Likes: <span class="descr">${image.likes}</span></p>
@@ -37,4 +38,12 @@ export function showLoader() {
 
 export function hideLoader() {
   loaderEl.classList.add('hidden');
+}
+
+export function showLoadMoreButton() {
+  loadMoreBtn.classList.remove('hidden');
+}
+
+export function hideLoadMoreButton() {
+  loadMoreBtn.classList.add('hidden');
 }
