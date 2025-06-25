@@ -33,9 +33,6 @@
   font-weight: 600;
   color: #000;
 }
-.hidden {
-  display: none;
-}
 
 .loader {
   border: 8px solid #f3f3f3;
@@ -58,4 +55,8 @@
   margin: 20px auto;
   font-size: 16px;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
